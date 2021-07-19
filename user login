@@ -1,0 +1,46 @@
+#user log in program
+def info():
+    print('''
+    ---create user(N/n)---
+    ---login account(E/e)---
+    ---exist program(Q/q)---
+    ---please input command---
+    ''')
+
+
+list1=dict()
+s=0
+while(s!='Q'or s!='q'):
+    info()
+    s=input()
+    if s=='N'or s=='n':
+        name=input('plz input your user name')
+        print('vertifing...')
+        while name in list1:
+            print('the user name has been used')
+            name=input('enter another one')
+
+        if name not in list1:
+            list1[name]=input('enter passward')
+            print('successful sign in,you can try to log in the system\n')
+    elif s=='E'or s=='e':
+        name= input('plz input your user name')
+        while name not in list1:
+            print('user name not found')
+            name=input('plz try again')
+        if name in list1:
+            if input('plz input passward')==list1[name]:
+                print('successfully login')
+                print('enjoy\n')
+    elif s=='Q'or s=='q':
+        print('thanks for use')
+
+    else:
+        print('command not found ')
+
+
+
+
+
+
+
