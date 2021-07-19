@@ -1,0 +1,45 @@
+# create a contact list
+print('''welcome
+1. find contact person 
+2.insert new contact 
+3. delect exciting contact 
+4. exit 
+''')
+s=0
+contacts=dict()
+while( s!=4):
+    s = input('plz input a command number')
+    if s=='1':
+        name =input('plz input the Name')
+        if name in contacts:
+            print(name+':'+contacts[name]+'\n')
+        else:
+            print('Name not on the list\n')
+
+    elif s=='2':
+        name=input('plz input Name')
+
+        if name in contacts:
+            print('Name on contact\n')
+            if input('are you sure to change,(Y/N)')=='Y':
+               contacts[name]=input('Number?')
+            else:
+                print ('all good\n')
+        else:
+           contacts[name] = input('Number?')
+
+
+    elif s=='3':
+        name =input('Name plz')
+        if name in contacts:
+            del(contacts[name])
+            print('successful deleted')
+        else:
+            print ('Name not on the list')
+
+    elif s=='4':
+        print('thanks, bye')
+        break
+    else:
+        print('Command not on the list ')
+
