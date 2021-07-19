@@ -1,0 +1,40 @@
+#使用递归编写一个十进制转换为二进制的函数（要求采用“取2取余”的方式，结果与调用bin()一样返回字符串形式）。
+
+def bin(x):
+    result=''
+    if x!=0:
+        result=bin(x//2)
+        return result+str(x%2)
+    else:
+        return result
+
+
+
+
+
+#写一个函数get_digits(n)，将参数n分解出每个位的数字并按顺序存放到列表中。举例：get_digits(12345) ==> [1, 2, 3, 4, 5]
+def get_digit(x):
+    if x==0:
+        return
+    else:
+        value.append(x%10)
+        get_digit(x//10)
+    return value.sort()
+
+def age(age1,people):
+    if people ==0:
+        return age1
+    else:
+
+        return age(age1+2,people-1)
+
+
+
+
+
+print (bin(128))
+value=[]
+get_digit(12980)
+print(value)
+
+print(age(10,5))
